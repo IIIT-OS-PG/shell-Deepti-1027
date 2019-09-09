@@ -143,6 +143,14 @@ char *cd=cmd[0];
 char *w=cmd[i-2];
 //printf("%s\n",cd);
 //printf("%s\n",w);
+if(strncmp(cd,"$$",2)==0)
+{
+  //printf("szfkjg");
+ int pid=getpid();
+ printf("%d\n",pid);
+}
+else
+{
 
 if((strcmp(w,">>") == 0)||(strcmp(w,">") == 0))
 {
@@ -159,6 +167,7 @@ else
        }
     
       else execvp(cmd[0],cmd);
+    }
 }
 }
 }
